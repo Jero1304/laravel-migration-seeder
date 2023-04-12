@@ -31,10 +31,7 @@ return new class extends Migration
             $table->string('agency', 20);
             $table->string('departure_station',60);
             $table->string('arrival_station',60);
-            // $table->dateTime('departure_time');
-            // $table->dateTime('arrival_time');
             $table->string('train_code',6);
-            
             $table->timestamps();
         });
     }

@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->integer('carriages',100);
-
+            $table->integer('carriages');
         });
     }
 
