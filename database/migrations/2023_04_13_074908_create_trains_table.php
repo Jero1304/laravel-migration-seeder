@@ -1,17 +1,4 @@
 <?php
-/*
-Ogni treno dovrà avere:
-
-Azienda
-Stazione di partenza
-Stazione di arrivo
-Orario di partenza
-Orario di arrivo
-Codice Treno
-Numero Carrozze
-In orario
-Cancellato
-*/
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -28,10 +15,15 @@ return new class extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
-            $table->string('agency', 20);
-            $table->string('departure_station',60);
-            $table->string('arrival_station',60);
-            $table->string('train_code',6);
+            $table->string('company',50);
+            $table->string('departure_station',50);
+            $table->string('arrival_station',50);
+            $table->dateTime('departure_time');
+            $table->dateTime('arrival_time');
+            $table->string('train_code',10);
+            $table->tinyInteger('wagons_number')->unsigned();
+            $table->boolean('on_time')->default(true);
+            $table->boolean('cancelled')->default(false);
             $table->timestamps();
         });
     }
